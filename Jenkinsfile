@@ -42,7 +42,7 @@ pipeline {
         }
         stage ('Email notification'){
             steps {
-            mail bcc: '', body: '"Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was succeeded', cc: '', from: '', replyTo: '', subject: 'Jenkuns Job', to: 'najasoft@gmail.com'
+            mail bcc: '', body: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was succeeded" , cc: '', from: '', replyTo: '', subject: 'Jenkuns Job', to: 'najasoft@gmail.com'
             }
         }
     }
