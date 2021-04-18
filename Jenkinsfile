@@ -28,7 +28,7 @@ pipeline {
                 
             }
         }
-        stage ('Code Analysis){
+        stage ('Code Analysis'){
             withSonarQubeEnv('sonar'){
                  sh "./mvnw sonar:sonar"
             }
