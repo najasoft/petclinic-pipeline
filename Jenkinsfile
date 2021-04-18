@@ -21,9 +21,10 @@ pipeline {
                   //  slackSend color: "danger", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was succeeded"
         
                 }
-                notBuilt {
-                   // slackSend color: "danger", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was failed"
-                }
+               /* notBuilt {
+                   
+                   slackSend color: "danger", message: "Job: ${env.JOB_NAME} with buildnumber ${env.BUILD_NUMBER} was failed"
+                } */
                 
             }
         }
