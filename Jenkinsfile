@@ -39,6 +39,8 @@ pipeline {
                         
                     }
         }
-        
+        stage ('Email notification'){
+            mail bcc: '', body: 'Job competed', cc: '', from: '', replyTo: '', subject: 'Jenkuns Job', to: 'najasoft@gmail.com '
+        }
     }
 }
