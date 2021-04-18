@@ -28,6 +28,13 @@ pipeline {
                 
             }
         }
+        stage ('Code Analysis){
+            withSonarQubeEnv('sonar'){
+                 sh "./mvnw sonar:sonar"
+            }
+
+        }
+            
         stage('Coverage'){
             steps{
                 step( [ $class: 'JacocoPublisher' ] )
