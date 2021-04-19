@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh "./mvnw clean compile package"
+                sh "./mvnw package"
 
             }
 
