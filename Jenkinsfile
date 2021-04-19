@@ -31,7 +31,7 @@ pipeline {
         stage ('Code Analysis'){
              steps {
                 withSonarQubeEnv('sonar'){
-                sh "./mvnw sonar:sonar"
+                sh "./mvnw sonar:sonar -Dsonar.projectKey=petclinic:app Dsonar.host.url=http://localhost:9002 Dsonar.login=sonar"
                 }
                  
             }
