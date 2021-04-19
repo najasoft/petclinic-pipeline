@@ -28,14 +28,14 @@ pipeline {
                 
             }
         }
-        stage ('Code Analysis'){
-             steps {
-                withSonarQubeEnv('sonar'){
-                sh "./mvnw sonar:sonar -Dsonar.projectKey=petclinic:app Dsonar.host.url=http://localhost:9002 -Dsonar.login=sonar"
-                }
-                 
-            }
+
+        stage('SonarQube analysis') { steps {
+    def scannerHome = tool 'SonarScanner 4.0';
+        withSonarQubeEnv('sonar') { // If you have configured more than one global server connection, you can specify its name
+                    sh "${scannerHome}/bin/sonar-scanner"
+    }
         }
+  }
             
         stage('Coverage'){
             steps{
